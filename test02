@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D Gradient Cube</title>
+    <style>
+        .cube-container {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(30deg) rotateY(45deg);
+            margin: 100px;
+        }
+        .face {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            opacity: 0.9;
+        }
+        .front {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            transform: translateZ(100px);
+        }
+        .back {
+            background: linear-gradient(45deg, #a18cd1, #fbc2eb);
+            transform: translateZ(-100px) rotateY(180deg);
+        }
+        .right {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transform: translateX(100px) rotateY(90deg);
+        }
+        .left {
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+            transform: translateX(-100px) rotateY(-90deg);
+        }
+        .top {
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            transform: translateY(-100px) rotateX(90deg);
+        }
+        .bottom {
+            background: linear-gradient(45deg, #43e97b, #38f9d7);
+            transform: translateY(100px) rotateX(-90deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="cube-container">
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face right"></div>
+        <div class="face left"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+    </div>
+</body>
+</html>
