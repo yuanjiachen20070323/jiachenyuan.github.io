@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Background Image Animation</title>
+    <style>
+        .bg-animation {
+            width: 500px;
+            height: 553px;
+            background-color: blue;
+            background-image: url('https://yqx.grazy.cn/public/uploads/image/course/20201016/18e15b4e4aab78e53f19c3a83f73a8ec.jpg');
+            background-repeat: no-repeat;
+            background-position: 0 -406px;
+            animation: slideBackground 10s linear infinite;
+        }
+
+        @keyframes slideBackground {
+            0% {
+                background-position: 0 -406px;
+            }
+            100% {
+                background-position: -1720px -406px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+</body>
+</html>
