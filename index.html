@@ -2,29 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Background Image Animation</title>
+    <title>3D Gradient Cube</title>
     <style>
-        .bg-animation {
-            width: 500px;
-            height: 553px;
-            background-color: blue;
-            background-image: url('https://yqx.grazy.cn/public/uploads/image/course/20201016/18e15b4e4aab78e53f19c3a83f73a8ec.jpg');
-            background-repeat: no-repeat;
-            background-position: 0 -406px;
-            animation: slideBackground 10s linear infinite;
+        .cube-container {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(30deg) rotateY(45deg);
+            margin: 100px;
         }
-
-        @keyframes slideBackground {
-            0% {
-                background-position: 0 -406px;
-            }
-            100% {
-                background-position: -1720px -406px;
-            }
+        .face {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            opacity: 0.9;
+        }
+        /* 正面 */
+        .front {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            transform: translateZ(100px);
+        }
+        /* 背面 */
+        .back {
+            background: linear-gradient(45deg, #a18cd1, #fbc2eb);
+            transform: translateZ(-100px) rotateY(180deg);
+        }
+        /* 右侧面 */
+        .right {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transform: translateX(100px) rotateY(90deg);
+        }
+        /* 左侧面 */
+        .left {
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+            transform: translateX(-100px) rotateY(-90deg);
+        }
+        /* 顶面 */
+        .top {
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            transform: translateY(-100px) rotateX(90deg);
+        }
+        /* 底面 */
+        .bottom {
+            background: linear-gradient(45deg, #43e97b, #38f9d7);
+            transform: translateY(100px) rotateX(-90deg);
         }
     </style>
 </head>
 <body>
-    <div class="bg-animation"></div>
+    <div class="cube-container">
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face right"></div>
+        <div class="face left"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+    </div>
 </body>
 </html>
